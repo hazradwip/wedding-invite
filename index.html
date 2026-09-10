@@ -14,7 +14,7 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://hazradwip.github.io/wedding-invite/">">
+    <meta property="og:url" content="https://hazradwip.github.io/wedding-invite/">
 
     <title>শুভ বিবাহ | Dwip & Rupashree</title>
     
@@ -54,7 +54,7 @@
             background-size: 28px 28px;
         }
 
-        /* ---------------- CLEAN ENVELOPE OVERLAY ---------------- */
+        /* ---------------- TAP TO OPEN ENVELOPE SCREEN (UNTOUCHED) ---------------- */
         .welcome-overlay {
             position: fixed;
             top: 0;
@@ -212,90 +212,6 @@
             max-width: 90%;
         }
 
-        /* ---------------- 3-BLOCK SCRATCH DESIGN ---------------- */
-        .scratch-3block-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin: 15px auto 10px auto;
-            max-width: 380px;
-        }
-
-        .scratch-box {
-            position: relative;
-            flex: 1;
-            height: 55px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1.5px solid var(--gold);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-            user-select: none;
-            background: #FFFFFF;
-        }
-
-        .scratch-text-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .scratch-val {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary-red);
-            font-family: 'Cinzel', serif;
-            line-height: 1;
-        }
-
-        .scratch-lbl {
-            font-size: 0.68rem;
-            color: var(--terracotta);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
-
-        canvas.scratch-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            cursor: pointer;
-        }
-
-        /* Venue Address Box inside Date Card */
-        .venue-address-block {
-            margin-top: 14px;
-            padding-top: 12px;
-            border-top: 1px dashed var(--gold);
-            color: var(--deep-maroon);
-        }
-
-        .venue-name-title {
-            font-family: 'Tiro Bangla', serif;
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-red);
-            margin-bottom: 4px;
-        }
-
-        .venue-address-text {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #3A1B10;
-            line-height: 1.5;
-        }
-
         /* ---------------- PETALS & SPARKLES ---------------- */
         .petals-container {
             position: fixed;
@@ -339,7 +255,7 @@
             100% { transform: scale(3) translateY(-30px); opacity: 0; }
         }
 
-        /* ---------------- MAIN WEBSITE LAYOUT ---------------- */
+        /* ---------------- HIGH-DEFINITION RESPONSIVE MAIN LAYOUT ---------------- */
         .page-border {
             border: 10px solid var(--primary-red);
             outline: 3px dashed var(--gold);
@@ -348,6 +264,7 @@
             padding: 25px 15px;
             margin: 10px;
             position: relative;
+            background-color: var(--cream);
             box-shadow: inset 0 0 15px rgba(128, 0, 0, 0.2);
             animation: borderGlow 4s ease-in-out infinite alternate;
         }
@@ -357,16 +274,20 @@
             100% { border-color: var(--deep-maroon); }
         }
 
-        .alpona-corner {
-            width: 50px; height: 50px;
+        /* AUTHENTIC BENGALI BRIDAL KALKA VECTOR CORNERS */
+        .kolka-corner-svg {
             position: absolute;
-            fill: var(--primary-red);
-            opacity: 0.85;
+            width: clamp(75px, 20vw, 150px);
+            height: clamp(75px, 20vw, 150px);
+            pointer-events: none;
+            z-index: 3;
+            filter: drop-shadow(2px 3px 5px rgba(74, 0, 0, 0.25));
         }
-        .top-left { top: 8px; left: 8px; }
-        .top-right { top: 8px; right: 8px; transform: scaleX(-1); }
-        .bottom-left { bottom: 8px; left: 8px; transform: scaleY(-1); }
-        .bottom-right { bottom: 8px; right: 8px; transform: scale(-1); }
+
+        .top-left-kolka { top: 4px; left: 4px; }
+        .top-right-kolka { top: 4px; right: 4px; transform: scaleX(-1); }
+        .bottom-left-kolka { bottom: 4px; left: 4px; transform: scaleY(-1); }
+        .bottom-right-kolka { bottom: 4px; right: 4px; transform: scale(-1); }
 
         .mandala-bg {
             position: absolute;
@@ -391,7 +312,7 @@
             max-width: 600px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 4;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -486,6 +407,7 @@
             border: 1.5px solid var(--gold);
             box-shadow: 0 4px 14px rgba(0,0,0,0.04);
             box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         /* Mantra Box */
@@ -502,7 +424,6 @@
         /* Bilingual Invitation Card */
         .bilingual-invitation {
             padding: 22px;
-            background: rgba(255, 255, 255, 0.85);
         }
 
         .invitation-bn {
@@ -532,9 +453,52 @@
             fill: var(--primary-red);
         }
 
+        /* Countdown Container */
+        .countdown-container {
+            background: linear-gradient(135deg, var(--primary-red), var(--deep-maroon));
+            color: var(--gold);
+            padding: 25px 15px;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 25px rgba(74, 0, 0, 0.25);
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .timer-box {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 12px 10px;
+            border-radius: 10px;
+            min-width: 70px;
+            border: 1px solid var(--gold);
+        }
+
+        .timer-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+        }
+
+        .timer-box label {
+            font-size: 0.8rem;
+            color: var(--light-gold);
+            text-transform: uppercase;
+        }
+
         /* Event Schedule Card */
         .event-card-single {
-            background: #FFFFFF;
             padding: 30px 20px;
             transition: all 0.4s ease;
         }
@@ -557,6 +521,90 @@
             color: var(--deep-maroon);
             margin-bottom: 8px;
             font-weight: 600;
+        }
+
+        /* ---------------- 3-BLOCK SCRATCH DESIGN ---------------- */
+        .scratch-3block-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 15px auto 10px auto;
+            max-width: 380px;
+        }
+
+        .scratch-box {
+            position: relative;
+            flex: 1;
+            height: 55px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            user-select: none;
+            background: #FFFFFF;
+        }
+
+        .scratch-text-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .scratch-val {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            font-family: 'Cinzel', serif;
+            line-height: 1;
+        }
+
+        .scratch-lbl {
+            font-size: 0.68rem;
+            color: var(--terracotta);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        canvas.scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        /* Venue Address Box inside Date Card */
+        .venue-address-block {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--gold);
+            color: var(--deep-maroon);
+        }
+
+        .venue-name-title {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 4px;
+        }
+
+        .venue-address-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #3A1B10;
+            line-height: 1.5;
         }
 
         /* Details Cards Grid */
@@ -612,53 +660,8 @@
             color: var(--gold);
         }
 
-        /* Countdown Container */
-        .countdown-container {
-            background: linear-gradient(135deg, var(--primary-red), var(--deep-maroon));
-            color: var(--gold);
-            padding: 25px 15px;
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 10px 25px rgba(74, 0, 0, 0.25);
-            margin: 20px 0;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .timer-box {
-            background: rgba(0, 0, 0, 0.35);
-            padding: 12px 10px;
-            border-radius: 10px;
-            min-width: 70px;
-            border: 1px solid var(--gold);
-        }
-
-        .timer-box span {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: bold;
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-        }
-
-        .timer-box label {
-            font-size: 0.8rem;
-            color: var(--light-gold);
-            text-transform: uppercase;
-        }
-
         /* Venue Location Box */
         .venue-section {
-            background: #FFFFFF;
             padding: 35px 20px;
             transition: all 0.4s ease;
         }
@@ -732,25 +735,33 @@
             margin-top: 40px;
             font-size: 1rem;
             color: var(--primary-red);
-            padding-bottom: 20px;
+            padding: 0 65px 20px 65px; /* Added clearance for corner kolkas */
+            position: relative;
+            z-index: 5;
+        }
+
+        footer p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         @media (max-width: 600px) {
             .page-border { padding: 15px 8px; margin: 5px; border-width: 6px; }
             .auspicious-symbol { font-size: 1.35rem; }
-            .alpona-corner { width: 35px; height: 35px; }
             .aligned-card { width: 100%; }
             .bilingual-invitation, .mantra, .event-card-single, .venue-section { padding: 18px 12px; }
             .scratch-3block-grid { gap: 6px; }
             .scratch-box { height: 48px; }
             .scratch-val { font-size: 1rem; }
             .scratch-lbl { font-size: 0.6rem; }
+            .kolka-corner-svg { width: 68px; height: 68px; }
+            footer { padding: 0 48px 18px 48px; font-size: 0.92rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ---------------- CLEAN EMBOSSED ENVELOPE SCREEN ---------------- -->
+    <!-- ---------------- TAP TO OPEN ENVELOPE SCREEN (UNTOUCHED) ---------------- -->
     <div class="welcome-overlay" id="welcomeOverlay">
         
         <!-- Full-Screen Top Flap -->
@@ -761,17 +772,14 @@
 
         <!-- Center Interactive Content -->
         <div class="envelope-center-content">
-            <!-- Amontron (Bengali) & Invitation (English) Titles -->
             <div class="bengali-amontron-title">আমন্ত্রণ</div>
             <div class="english-invitation-subtitle">Invitation</div>
             <div class="tap-reveal-title">Tap to Reveal</div>
 
-            <!-- Melted Wax Seal Stamp -->
             <div class="wax-seal">
                 <i class="fa-solid fa-brands fa-pagelines prajapati-icon" title="শ্রী শ্রী প্রজাপতয়ে নমঃ"></i>
             </div>
 
-            <!-- Overlay Couple Title -->
             <div class="overlay-invitation-text">
                 <div style="font-family: 'Tiro Bangla', serif; font-size: 1.8rem; font-weight: bold; margin-bottom: 2px;">
                     দ্বীপ ও রূপশ্রী
@@ -794,18 +802,69 @@
 
     <div class="page-border">
         
+        <!-- AUTHENTIC HIGH-DEFINITION VECTOR BENGALI KALKA CORNER MOTIFS -->
+        <svg class="kolka-corner-svg top-left-kolka" viewBox="0 0 120 120">
+            <path d="M0,0 L120,0 C90,10 65,30 50,60 C40,80 30,105 0,120 Z" fill="var(--primary-red)"/>
+            <path d="M5,5 Q70,12 105,5 Q80,40 20,105 Q12,60 5,5 Z" fill="var(--deep-maroon)"/>
+            <path d="M12,12 Q55,20 85,12 Q65,35 18,85 Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M22,22 C48,28 62,22 72,18 C52,38 32,52 18,72 Z" fill="var(--primary-red)"/>
+            <circle cx="30" cy="30" r="6" fill="var(--gold)"/>
+            <circle cx="54" cy="24" r="5" fill="var(--gold)"/>
+            <circle cx="24" cy="54" r="5" fill="var(--gold)"/>
+            <circle cx="78" cy="22" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="22" cy="78" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="94" cy="16" r="3.5" fill="#FFFFFF"/>
+            <circle cx="16" cy="94" r="3.5" fill="#FFFFFF"/>
+        </svg>
+
+        <svg class="kolka-corner-svg top-right-kolka" viewBox="0 0 120 120">
+            <path d="M0,0 L120,0 C90,10 65,30 50,60 C40,80 30,105 0,120 Z" fill="var(--primary-red)"/>
+            <path d="M5,5 Q70,12 105,5 Q80,40 20,105 Q12,60 5,5 Z" fill="var(--deep-maroon)"/>
+            <path d="M12,12 Q55,20 85,12 Q65,35 18,85 Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M22,22 C48,28 62,22 72,18 C52,38 32,52 18,72 Z" fill="var(--primary-red)"/>
+            <circle cx="30" cy="30" r="6" fill="var(--gold)"/>
+            <circle cx="54" cy="24" r="5" fill="var(--gold)"/>
+            <circle cx="24" cy="54" r="5" fill="var(--gold)"/>
+            <circle cx="78" cy="22" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="22" cy="78" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="94" cy="16" r="3.5" fill="#FFFFFF"/>
+            <circle cx="16" cy="94" r="3.5" fill="#FFFFFF"/>
+        </svg>
+
+        <svg class="kolka-corner-svg bottom-left-kolka" viewBox="0 0 120 120">
+            <path d="M0,0 L120,0 C90,10 65,30 50,60 C40,80 30,105 0,120 Z" fill="var(--primary-red)"/>
+            <path d="M5,5 Q70,12 105,5 Q80,40 20,105 Q12,60 5,5 Z" fill="var(--deep-maroon)"/>
+            <path d="M12,12 Q55,20 85,12 Q65,35 18,85 Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M22,22 C48,28 62,22 72,18 C52,38 32,52 18,72 Z" fill="var(--primary-red)"/>
+            <circle cx="30" cy="30" r="6" fill="var(--gold)"/>
+            <circle cx="54" cy="24" r="5" fill="var(--gold)"/>
+            <circle cx="24" cy="54" r="5" fill="var(--gold)"/>
+            <circle cx="78" cy="22" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="22" cy="78" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="94" cy="16" r="3.5" fill="#FFFFFF"/>
+            <circle cx="16" cy="94" r="3.5" fill="#FFFFFF"/>
+        </svg>
+
+        <svg class="kolka-corner-svg bottom-right-kolka" viewBox="0 0 120 120">
+            <path d="M0,0 L120,0 C90,10 65,30 50,60 C40,80 30,105 0,120 Z" fill="var(--primary-red)"/>
+            <path d="M5,5 Q70,12 105,5 Q80,40 20,105 Q12,60 5,5 Z" fill="var(--deep-maroon)"/>
+            <path d="M12,12 Q55,20 85,12 Q65,35 18,85 Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M22,22 C48,28 62,22 72,18 C52,38 32,52 18,72 Z" fill="var(--primary-red)"/>
+            <circle cx="30" cy="30" r="6" fill="var(--gold)"/>
+            <circle cx="54" cy="24" r="5" fill="var(--gold)"/>
+            <circle cx="24" cy="54" r="5" fill="var(--gold)"/>
+            <circle cx="78" cy="22" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="22" cy="78" r="4.5" fill="var(--light-gold)"/>
+            <circle cx="94" cy="16" r="3.5" fill="#FFFFFF"/>
+            <circle cx="16" cy="94" r="3.5" fill="#FFFFFF"/>
+        </svg>
+
         <!-- Rotating Mandala Background Art -->
         <svg class="mandala-bg" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,3"/>
             <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="1"/>
             <path d="M50,5 L50,95 M5,50 L95,50 M18,18 L82,82 M18,82 L82,18" stroke="currentColor" stroke-width="0.5"/>
         </svg>
-
-        <!-- Alpona Corner Ornaments -->
-        <svg class="alpona-corner top-left" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
-        <svg class="alpona-corner top-right" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
-        <svg class="alpona-corner bottom-left" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
-        <svg class="alpona-corner bottom-right" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
 
         <div class="container">
 
