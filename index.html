@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph Meta Tags for WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="আমন্ত্রণ | Dwip & Rupashree Wedding">
+    <meta property="og:description" content="আমাদের শুভ বিবাহ উপলক্ষে আপনাকে ও আপনার পরিবারকে সপরিবারে বিনীত নিমন্ত্রণ জানাচ্ছি।">
+    <meta property="og:image" content="https://hazradwip.github.io/invite/preview-thumbnail.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://hazradwip.github.io/invite/wedding.html">
+
     <title>শুভ বিবাহ | Dwip & Rupashree</title>
     
     <!-- Google Fonts for Bengali & Serif Elegance -->
@@ -41,7 +51,7 @@
             background-size: 28px 28px;
         }
 
-        /* ---------------- ENVELOPE OVERLAY ---------------- */
+        /* ---------------- CLEAN ENVELOPE OVERLAY ---------------- */
         .welcome-overlay {
             position: fixed;
             top: 0;
@@ -49,9 +59,7 @@
             width: 100vw;
             height: 100vh;
             background-color: #F7F4EE;
-            background-image: 
-                radial-gradient(circle at center, #FCFAF6 0%, #EFEBE4 100%),
-                repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0px, rgba(0,0,0,0.01) 2px, transparent 2px, transparent 8px);
+            background-image: radial-gradient(circle at center, #FCFAF6 0%, #EFEBE4 100%);
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -60,7 +68,7 @@
             cursor: pointer;
             transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease, visibility 0.8s ease;
             overflow: hidden;
-            box-shadow: inset 0 0 80px rgba(0,0,0,0.12);
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.08);
             perspective: 1000px;
         }
 
@@ -83,18 +91,7 @@
             transform-origin: top;
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 6;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
-        }
-
-        .embossed-floral-pattern {
-            position: absolute;
-            top: -50vh;
-            left: -35vw;
-            width: 70vw;
-            height: 40vh;
-            pointer-events: none;
-            opacity: 0.25;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 20 Q65 5 80 20 Q95 35 80 50 Q65 65 50 50 Q35 65 20 50 Q5 35 20 20 Q35 5 50 20 Z' fill='none' stroke='%200000' stroke-width='2'/%3E%3C/svg%3E");
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.12));
         }
 
         .welcome-overlay.open .fullscreen-top-flap {
@@ -112,7 +109,7 @@
             border-right: 50vw solid #EAE5DC;
             border-bottom: 48vh solid #F2ECE1;
             z-index: 5;
-            filter: drop-shadow(0 -5px 15px rgba(0,0,0,0.08));
+            filter: drop-shadow(0 -5px 15px rgba(0,0,0,0.06));
         }
 
         .envelope-center-content {
@@ -125,19 +122,39 @@
             padding: 20px;
         }
 
+        .bengali-amontron-title {
+            font-family: 'Tiro Bangla', serif;
+            font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+            color: var(--primary-red);
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .english-invitation-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            color: var(--terracotta);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+
         .tap-reveal-title {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.4rem, 7vw, 3.8rem);
+            font-size: clamp(1.8rem, 4.5vw, 2.3rem);
             color: #6B321D;
             text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-            margin-bottom: 12px;
+            margin-bottom: 4px;
             letter-spacing: 1px;
         }
 
         .wax-seal {
             position: relative;
-            width: clamp(95px, 24vw, 120px);
-            height: clamp(95px, 24vw, 120px);
+            width: clamp(80px, 20vw, 100px);
+            height: clamp(80px, 20vw, 100px);
             background: radial-gradient(circle at 32% 28%, #BC3F25 0%, #8C1C0C 50%, #4D0902 90%);
             border-radius: 46% 54% 52% 48% / 53% 47% 53% 47%;
             display: flex;
@@ -148,7 +165,7 @@
                 0 4px 10px rgba(0, 0, 0, 0.3),
                 inset 0 4px 6px rgba(255, 255, 255, 0.45),
                 inset 0 -8px 14px rgba(0, 0, 0, 0.7);
-            margin: 8px 0 18px 0;
+            margin: 10px 0 14px 0;
             transition: opacity 0.5s ease;
             animation: pulseSeal 2.2s infinite alternate;
         }
@@ -166,7 +183,7 @@
         }
 
         .prajapati-icon {
-            font-size: clamp(2.2rem, 5.8vw, 2.9rem);
+            font-size: clamp(2rem, 5vw, 2.5rem);
             color: #E2C686;
             text-shadow: 
                 -1px -1px 2px rgba(0, 0, 0, 0.9),
@@ -251,6 +268,29 @@
             height: 100%;
             z-index: 2;
             cursor: pointer;
+        }
+
+        /* Venue Address Box inside Date Card */
+        .venue-address-block {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--gold);
+            color: var(--deep-maroon);
+        }
+
+        .venue-name-title {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 4px;
+        }
+
+        .venue-address-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #3A1B10;
+            line-height: 1.5;
         }
 
         /* ---------------- PETALS & SPARKLES ---------------- */
@@ -707,20 +747,20 @@
 </head>
 <body>
 
-    <!-- ---------------- ELEGANT EMBOSSED CREAM ENVELOPE SCREEN ---------------- -->
-    <div class="welcome-overlay" id="welcomeOverlay" onclick="openInvitation()">
+    <!-- ---------------- CLEAN EMBOSSED ENVELOPE SCREEN ---------------- -->
+    <div class="welcome-overlay" id="welcomeOverlay">
         
         <!-- Full-Screen Top Flap -->
-        <div class="fullscreen-top-flap">
-            <div class="embossed-floral-pattern"></div>
-        </div>
+        <div class="fullscreen-top-flap"></div>
 
         <!-- Full-Screen Bottom Pocket Flaps -->
         <div class="fullscreen-bottom-pocket"></div>
 
-        <!-- Center Interactive Content (Cleaned without extra subtext) -->
+        <!-- Center Interactive Content -->
         <div class="envelope-center-content">
-            <!-- Tap to Reveal Title -->
+            <!-- Amontron (Bengali) & Invitation (English) Titles -->
+            <div class="bengali-amontron-title">আমন্ত্রণ</div>
+            <div class="english-invitation-subtitle">Invitation</div>
             <div class="tap-reveal-title">Tap to Reveal</div>
 
             <!-- Melted Wax Seal Stamp -->
@@ -730,10 +770,10 @@
 
             <!-- Overlay Couple Title -->
             <div class="overlay-invitation-text">
-                <div style="font-family: 'Tiro Bangla', serif; font-size: 2rem; font-weight: bold; margin-bottom: 4px;">
+                <div style="font-family: 'Tiro Bangla', serif; font-size: 1.8rem; font-weight: bold; margin-bottom: 2px;">
                     দ্বীপ ও রূপশ্রী
                 </div>
-                <div style="font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #6B321D;">
+                <div style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #6B321D;">
                     (Dwip & Rupashree)
                 </div>
             </div>
@@ -744,7 +784,7 @@
     <!-- Animated Petals Container -->
     <div class="petals-container" id="petals"></div>
 
-    <!-- Shehnai Audio -->
+    <!-- Shehnai Audio with Immediate Preload -->
     <audio id="shehnaiAudio" loop preload="auto">
         <source src="shehnai.mp3" type="audio/mpeg">
     </audio>
@@ -791,7 +831,7 @@
                 <!-- Bilingual Invitation Card (Aligned Card) -->
                 <div class="bilingual-invitation aligned-card reveal">
                     <p class="invitation-bn">
-                        আমাদের শুভ বিবাহ উপলক্ষে আপনাকে ও আপনার পরিবারকে সপরিবারে উপস্থিত থেকে আমাদের নতুন পথচলায় আশীর্বাদ করার জন্য বিনীত নিমন্ত্রণ জানাচ্ছি।
+                        আমাদের শুভ বিবাহ উপলক্ষে আপনাকে ও আপনার পরিবারকে সপরিবারে উপস্থিত থেকে আমাদের নতুন পথচলায় আশীর্বাদ করার জন্য বিনীত নিমন্ত্রণ জানাচ্ছি।
                     </p>
                     <p class="invitation-en">
                         We cordially invite you and your family to bless us on the auspicious occasion of the wedding ceremony of <strong>Dwip</strong> & <strong>Rupashree</strong>.
@@ -817,7 +857,7 @@
 
             <h2 class="section-title reveal">অনুষ্ঠানসূচী (Schedule)</h2>
             
-            <!-- Wedding Event Card with 3 Scratch Blocks -->
+            <!-- Wedding Event Card with 3 Scratch Blocks & Address -->
             <div class="event-card-single aligned-card reveal" style="border-color: var(--primary-red);">
                 <div class="event-icon"><i class="fa-solid fa-gem"></i></div>
                 <div class="event-title">শুভ বিবাহ (Wedding Ceremony)</div>
@@ -854,7 +894,17 @@
                 </div>
 
                 <div class="event-time" style="margin-top: 10px;"><i class="fa-regular fa-clock" style="color: var(--primary-red);"></i> Evening 7:00 PM</div>
-                <p style="margin-top: 8px; font-size: 0.9rem; color: #666;">Saat Paake Bandha, Subho Dristi, Sindoor Daan & Lagna Mahurat.</p>
+                
+                <!-- INTEGRATED WEDDING VENUE NAME & ADDRESS BLOCK -->
+                <div class="venue-address-block">
+                    <div class="venue-name-title"><i class="fa-solid fa-building-columns" style="color: var(--gold); margin-right: 4px;"></i> স্থান: সেলেব্রেশন হল (Celebration Hall)</div>
+                    <div class="venue-address-text">
+                        ৭৪২/৫, শরৎ চ্যাটার্জি রোড, চ্যাটার্জিহাট থানা, হাওড়া, পশ্চিমবঙ্গ ৭১১১০৪<br>
+                        742/5, Sarat Chatterjee Rd, Chatterjeehat PS, Howrah, West Bengal 711104
+                    </div>
+                </div>
+
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Saat Paake Bandha, Subho Dristi, Sindoor Daan & Lagna Mahurat.</p>
             </div>
 
             <!-- Wedding Details Grid -->
@@ -897,22 +947,42 @@
 
     <!-- JavaScript -->
     <script>
-        // 1. Envelope Opening Animation
         const overlay = document.getElementById('welcomeOverlay');
         const audio = document.getElementById('shehnaiAudio');
 
-        function openInvitation() {
-            overlay.classList.add('open');
+        // Preload Audio Immediately
+        window.addEventListener('DOMContentLoaded', () => {
             if (audio) {
-                audio.play().catch(err => console.log("Audio allowed on click:", err));
+                audio.load();
             }
+        });
+
+        // Instant Trigger Function on Tap
+        function triggerAudioPlayback() {
+            if (audio) {
+                audio.currentTime = 0;
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => console.log("Audio play allowed on user tap:", err));
+                }
+            }
+        }
+
+        function openInvitation() {
+            triggerAudioPlayback();
+            
+            overlay.classList.add('open');
             setTimeout(() => {
                 overlay.classList.add('hidden');
                 checkScrollReveal();
-            }, 1000);
+            }, 800);
         }
 
-        // 2. Multi-Block Scratch-Off Canvas Logic
+        // Touch and click listeners for immediate audio
+        overlay.addEventListener('touchstart', triggerAudioPlayback, { passive: true, once: true });
+        overlay.addEventListener('click', openInvitation);
+
+        // Multi-Block Scratch-Off Canvas Logic
         function initScratchCanvas(canvasId, hintText) {
             const canvas = document.getElementById(canvasId);
             if (!canvas) return;
@@ -957,7 +1027,7 @@
             initScratchCanvas('scratchBlock3', '✨ Year');
         });
 
-        // 3. Scroll Reveal Observer
+        // Scroll Reveal Observer
         function checkScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(el => {
@@ -973,7 +1043,7 @@
 
         window.addEventListener('scroll', checkScrollReveal);
 
-        // 4. Sparkle FX on Click
+        // Sparkle FX on Click
         document.addEventListener('click', function(e) {
             const sparkle = document.createElement('div');
             sparkle.className = 'click-sparkle';
@@ -984,7 +1054,7 @@
             setTimeout(() => sparkle.remove(), 800);
         });
 
-        // 5. Target Wedding Date (January 29, 2027)
+        // Target Wedding Date (January 29, 2027)
         const weddingDate = new Date("January 29, 2027 19:00:00").getTime();
 
         setInterval(() => {
@@ -1002,7 +1072,7 @@
             document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
         }, 1000);
 
-        // 6. Falling Flower Petals
+        // Falling Flower Petals
         const petalsContainer = document.getElementById('petals');
         for (let i = 0; i < 20; i++) {
             const petal = document.createElement('div');
