@@ -41,7 +41,7 @@
             background-size: 28px 28px;
         }
 
-        /* ---------------- ELEGANT EMBOSSED CREAM ENVELOPE SCREEN ---------------- */
+        /* ---------------- ENVELOPE SCREEN ---------------- */
         .welcome-overlay {
             position: fixed;
             top: 0;
@@ -71,7 +71,6 @@
             pointer-events: none;
         }
 
-        /* Full-Screen Triangular Top Flap */
         .fullscreen-top-flap {
             position: absolute;
             top: 0;
@@ -103,7 +102,6 @@
             z-index: 2;
         }
 
-        /* Full-Screen Bottom Pocket Flaps */
         .fullscreen-bottom-pocket {
             position: absolute;
             bottom: 0;
@@ -117,7 +115,6 @@
             filter: drop-shadow(0 -5px 15px rgba(0,0,0,0.08));
         }
 
-        /* Center Content Overlay */
         .envelope-center-content {
             position: relative;
             z-index: 8;
@@ -137,7 +134,6 @@
             letter-spacing: 1px;
         }
 
-        /* Real Bronze Wax Seal Stamp */
         .wax-seal {
             position: relative;
             width: clamp(95px, 24vw, 120px);
@@ -196,7 +192,7 @@
             max-width: 90%;
         }
 
-        /* ---------------- 3-BLOCK SCRATCH CARD DESIGN ---------------- */
+        /* ---------------- 3-BLOCK SCRATCH DESIGN ---------------- */
         .scratch-3block-grid {
             display: flex;
             justify-content: center;
@@ -346,10 +342,26 @@
             to { transform: translateX(-50%) rotate(360deg); }
         }
 
-        header {
-            padding: 30px 10px 10px 10px;
+        /* ---------------- STRICT CENTERED CONTAINER & CARDS ---------------- */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 30px 0 10px 0;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .auspicious-symbol {
@@ -422,28 +434,32 @@
 
         @keyframes shineText { to { background-position: 200% center; } }
 
+        /* STRICT UNIFIED RIGID WIDTH CLASS FOR ALL CARDS */
+        .aligned-card {
+            width: 100%;
+            max-width: 600px;
+            margin: 16px 0;
+            border-radius: 12px;
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            box-sizing: border-box;
+        }
+
+        /* Mantra Box */
         .mantra {
             font-family: 'Tiro Bangla', serif;
             font-style: italic;
             color: var(--primary-red);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 15px auto;
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
-            padding: 12px 10px;
-            line-height: 1.6;
-            background: rgba(254, 241, 184, 0.25);
-            border-radius: 6px;
+            font-size: 1.18rem;
+            padding: 18px 20px;
+            line-height: 1.75;
+            background: rgba(254, 241, 184, 0.35);
         }
 
+        /* Bilingual Invitation Card */
         .bilingual-invitation {
-            max-width: 680px;
-            margin: 20px auto 10px auto;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            border: 1px solid var(--gold);
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.85);
         }
 
         .invitation-bn {
@@ -451,33 +467,109 @@
             font-size: 1.15rem;
             color: var(--deep-maroon);
             line-height: 1.7;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-weight: 600;
         }
 
         .invitation-en {
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             color: #444;
             line-height: 1.6;
             border-top: 1px dashed var(--gold);
-            padding-top: 10px;
+            padding-top: 12px;
         }
 
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .alpona-divider {
-            width: 180px;
-            max-width: 80%;
-            margin: 20px auto;
+        /* SYMMETRICAL ALPONA SEPARATOR */
+        .alpona-separator {
+            width: 100%;
+            max-width: 220px;
+            height: 24px;
+            margin: 22px auto 10px auto;
             display: block;
             fill: var(--primary-red);
         }
 
+        /* Event Schedule Card */
+        .event-card-single {
+            background: #FFFFFF;
+            padding: 30px 20px;
+            transition: all 0.4s ease;
+        }
+
+        .event-card-single:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(128, 0, 0, 0.15);
+            border-color: var(--primary-red);
+        }
+
+        .event-icon {
+            font-size: 2.6rem;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+        }
+
+        .event-title {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 1.8rem;
+            color: var(--deep-maroon);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Details Cards Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 600px;
+            margin: 16px 0;
+        }
+
+        .details-card {
+            background: rgba(254, 241, 184, 0.35);
+            border: 1.5px solid var(--gold);
+            border-radius: 12px;
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .details-card h3 {
+            font-family: 'Tiro Bangla', serif;
+            color: var(--primary-red);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .details-card p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .phone-link {
+            display: inline-block;
+            color: var(--primary-red);
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 6px;
+            font-size: 1.1rem;
+            border: 1px dashed var(--primary-red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .phone-link:hover {
+            background-color: var(--primary-red);
+            color: var(--gold);
+        }
+
+        /* Countdown Container */
         .countdown-container {
             background: linear-gradient(135deg, var(--primary-red), var(--deep-maroon));
             color: var(--gold);
@@ -485,9 +577,11 @@
             border-radius: 15px;
             border: 2px solid var(--gold);
             box-shadow: 0 10px 25px rgba(74, 0, 0, 0.25);
-            margin: 30px 0;
+            margin: 20px 0;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 600px;
         }
 
         .timer {
@@ -519,64 +613,11 @@
             text-transform: uppercase;
         }
 
-        /* ---------------- SCROLL REVEAL ANIMATIONS ---------------- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            font-family: 'Tiro Bangla', serif;
-            font-size: 2rem;
-            color: var(--primary-red);
-            margin: 40px 0 20px 0;
-            font-weight: 700;
-        }
-
-        .event-card-single {
-            background: #FFFFFF;
-            border: 2px solid var(--gold);
-            border-radius: 15px;
-            padding: 30px 20px;
-            max-width: 520px;
-            margin: 20px auto 0 auto;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-            transition: all 0.4s ease;
-        }
-
-        .event-card-single:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(128, 0, 0, 0.15);
-            border-color: var(--primary-red);
-        }
-
-        .event-icon {
-            font-size: 2.6rem;
-            color: var(--primary-red);
-            margin-bottom: 12px;
-        }
-
-        .event-title {
-            font-family: 'Tiro Bangla', serif;
-            font-size: 1.8rem;
-            color: var(--deep-maroon);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
+        /* Venue Location Box */
         .venue-section {
             background: #FFFFFF;
-            border: 2px solid var(--gold);
-            border-radius: 15px;
             padding: 35px 20px;
-            margin: 40px 0;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
         }
 
         .location-pulse-box {
@@ -624,6 +665,26 @@
             font-size: 1rem;
         }
 
+        /* ---------------- SCROLL REVEAL ANIMATIONS ---------------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin: 25px 0 12px 0;
+            font-weight: 700;
+        }
+
         footer {
             margin-top: 40px;
             font-size: 1rem;
@@ -634,11 +695,9 @@
         @media (max-width: 600px) {
             .page-border { padding: 15px 8px; margin: 5px; border-width: 6px; }
             .auspicious-symbol { font-size: 1.35rem; }
-            .timer { gap: 6px; }
-            .timer-box { min-width: 50px; padding: 8px 4px; }
-            .timer-box span { font-size: 1.25rem; }
             .alpona-corner { width: 35px; height: 35px; }
-            .bride-groom-icon { font-size: 2.2rem; }
+            .aligned-card { width: 100%; }
+            .bilingual-invitation, .mantra, .event-card-single, .venue-section { padding: 18px 12px; }
             .scratch-3block-grid { gap: 6px; }
             .scratch-box { height: 48px; }
             .scratch-val { font-size: 1rem; }
@@ -659,27 +718,24 @@
         <!-- Full-Screen Bottom Pocket Flaps -->
         <div class="fullscreen-bottom-pocket"></div>
 
-        <!-- Center Interactive Content -->
+        <!-- Center Interactive Content (Cleaned without extra subtext) -->
         <div class="envelope-center-content">
             <!-- Tap to Reveal Title -->
             <div class="tap-reveal-title">Tap to Reveal</div>
 
-            <!-- Bronze Melted Wax Seal Stamp with Prajapati Icon -->
+            <!-- Melted Wax Seal Stamp -->
             <div class="wax-seal">
                 <i class="fa-solid fa-brands fa-pagelines prajapati-icon" title="শ্রী শ্রী প্রজাপতয়ে নমঃ"></i>
             </div>
 
-            <!-- Overlay Bengali Invitation Text -->
+            <!-- Overlay Couple Title -->
             <div class="overlay-invitation-text">
-                <div style="font-family: 'Tiro Bangla', serif; font-size: 1.8rem; font-weight: bold; margin-bottom: 4px;">
+                <div style="font-family: 'Tiro Bangla', serif; font-size: 2rem; font-weight: bold; margin-bottom: 4px;">
                     দ্বীপ ও রূপশ্রী
                 </div>
-                <div style="font-family: 'Great Vibes', cursive; font-size: 2rem; margin-bottom: 8px; color: #6B321D;">
+                <div style="font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #6B321D;">
                     (Dwip & Rupashree)
                 </div>
-                <p style="font-family: 'Tiro Bangla', serif; font-size: 1.1rem; opacity: 0.95; line-height: 1.5;">
-                    আমাদের শুভ বিবাহ উৎসবে আপনাকে ও আপনার পরিবারকে সাদর নিমন্ত্রণ।
-                </p>
             </div>
         </div>
 
@@ -708,45 +764,40 @@
         <svg class="alpona-corner bottom-left" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
         <svg class="alpona-corner bottom-right" viewBox="0 0 100 100"><path d="M0,0 L100,0 C50,0 0,50 0,100 Z M30,10 C50,20 20,50 10,30 Z"/></svg>
 
-        <header>
-            <div class="auspicious-symbol reveal">
-                ॐ || শ্রী শ্রী প্রজাপতয়ে নমঃ ||
-            </div>
-            
-            <p class="sub-heading reveal">শুভ বিবাহ বন্ধনে</p>
-
-            <!-- Animated Bride & Groom Silhouette Motifs -->
-            <div class="couple-animation-box reveal">
-                <i class="fa-solid fa-user-tie bride-groom-icon groom-icon" title="Groom"></i>
-                <i class="fa-solid fa-heart heart-center"></i>
-                <i class="fa-solid fa-user-ninja bride-groom-icon bride-icon" style="transform: scaleX(-1);" title="Bride"></i>
-            </div>
-
-            <h1 class="couple-names reveal">Dwip & Rupashree</h1>
-
-            <!-- Mantra -->
-            <p class="mantra reveal">
-                "যদিদং হৃদয়ং তব, তদস্তু হৃদয়ং মম।<br>
-                যদিদং হৃদয়ং মম, তদস্তু হৃদয়ং তব।।"
-            </p>
-
-            <!-- Direct First-Person Invitation Phrasing -->
-            <div class="bilingual-invitation reveal">
-                <p class="invitation-bn">
-                    আমাদের শুভ বিবাহ উপলক্ষে আপনাকে ও আপনার পরিবারকে সপরিবারে উপস্থিত থেকে আমাদের নতুন পথচলায় আশীর্বাদ করার জন্য বিনীত নিমন্ত্রণ জানাচ্ছি।
-                </p>
-                <p class="invitation-en">
-                    We cordially invite you and your family to bless us on the auspicious occasion of the wedding ceremony of <strong>Dwip</strong> & <strong>Rupashree</strong>.
-                </p>
-            </div>
-        </header>
-
-        <!-- Alpona Divider -->
-        <svg class="alpona-divider reveal" viewBox="0 0 200 30">
-            <path d="M100 0 C110 15, 130 15, 140 0 C150 15, 170 15, 180 0 L200 15 L180 30 C170 15, 150 15, 140 30 C130 15, 110 15, 100 30 C90 15, 70 15, 60 0 C70 15, 90 15, 100 0 Z"/>
-        </svg>
-
         <div class="container">
+
+            <header>
+                <div class="auspicious-symbol reveal">
+                    ॐ || শ্রী শ্রী প্রজাপতয়ে নমঃ ||
+                </div>
+                
+                <p class="sub-heading reveal">শুভ বিবাহ বন্ধনে</p>
+
+                <!-- Animated Bride & Groom Silhouette Motifs -->
+                <div class="couple-animation-box reveal">
+                    <i class="fa-solid fa-user-tie bride-groom-icon groom-icon" title="Groom"></i>
+                    <i class="fa-solid fa-heart heart-center"></i>
+                    <i class="fa-solid fa-user-ninja bride-groom-icon bride-icon" style="transform: scaleX(-1);" title="Bride"></i>
+                </div>
+
+                <h1 class="couple-names reveal">Dwip & Rupashree</h1>
+
+                <!-- Mantra Box (Aligned Card) -->
+                <p class="mantra aligned-card reveal">
+                    "যদিদং হৃদয়ং তব, তদস্তু হৃদয়ং মম।<br>
+                    যদিদং হৃদয়ং মম, তদস্তু হৃদয়ং তব।।"
+                </p>
+
+                <!-- Bilingual Invitation Card (Aligned Card) -->
+                <div class="bilingual-invitation aligned-card reveal">
+                    <p class="invitation-bn">
+                        আমাদের শুভ বিবাহ উপলক্ষে আপনাকে ও আপনার পরিবারকে সপরিবারে উপস্থিত থেকে আমাদের নতুন পথচলায় আশীর্বাদ করার জন্য বিনীত নিমন্ত্রণ জানাচ্ছি।
+                    </p>
+                    <p class="invitation-en">
+                        We cordially invite you and your family to bless us on the auspicious occasion of the wedding ceremony of <strong>Dwip</strong> & <strong>Rupashree</strong>.
+                    </p>
+                </div>
+            </header>
 
             <!-- Countdown Timer -->
             <div class="countdown-container reveal">
@@ -759,9 +810,15 @@
                 </div>
             </div>
 
-            <!-- Itinerary / Schedule -->
+            <!-- SYMMETRICAL ALPONA SEPARATOR -->
+            <svg class="alpona-separator reveal" viewBox="0 0 200 24">
+                <path d="M0 12 Q50 0 100 12 Q150 24 200 12 Q150 0 100 12 Q50 24 0 12 Z M90 12 A10 10 0 1 0 110 12 A10 10 0 1 0 90 12 Z"/>
+            </svg>
+
             <h2 class="section-title reveal">অনুষ্ঠানসূচী (Schedule)</h2>
-            <div class="event-card-single reveal" style="border-color: var(--primary-red);">
+            
+            <!-- Wedding Event Card with 3 Scratch Blocks -->
+            <div class="event-card-single aligned-card reveal" style="border-color: var(--primary-red);">
                 <div class="event-icon"><i class="fa-solid fa-gem"></i></div>
                 <div class="event-title">শুভ বিবাহ (Wedding Ceremony)</div>
                 <div style="font-size: 0.9rem; color: var(--terracotta); margin-bottom: 6px;">✨ Scratch below to reveal the date</div>
@@ -800,8 +857,22 @@
                 <p style="margin-top: 8px; font-size: 0.9rem; color: #666;">Saat Paake Bandha, Subho Dristi, Sindoor Daan & Lagna Mahurat.</p>
             </div>
 
-            <!-- Dedicated Wedding Location Section -->
-            <div class="venue-section reveal">
+            <!-- Wedding Details Grid -->
+            <div class="details-grid reveal">
+                <div class="details-card">
+                    <h3><i class="fa-solid fa-heart" style="margin-right: 5px;"></i> নিমন্ত্রণ বার্তা</h3>
+                    <p>আমাদের জীবনের এই শুভ লগ্নে আপনার উপস্থিতি ও আন্তরিক আশীর্বাদ আমাদের পরম কাম্য। সপরিবারে অবশ্যই আসবেন।</p>
+                </div>
+
+                <div class="details-card">
+                    <h3><i class="fa-solid fa-phone" style="margin-right: 5px;"></i> যোগাযোগ</h3>
+                    <p>যেকোনো স্থাননির্দেশনা বা সহায়তার জন্য যোগাযোগ করুন:</p>
+                    <a href="tel:9903385973" class="phone-link"><i class="fa-solid fa-phone-volume"></i> 9903385973</a>
+                </div>
+            </div>
+
+            <!-- Dedicated Wedding Venue Location Section (Aligned Card) -->
+            <div class="venue-section aligned-card reveal">
                 <h2 style="font-family: 'Tiro Bangla', serif; color: var(--primary-red); font-size: 1.8rem; margin-bottom: 8px;">
                     বিবাহ বাসর (Wedding Venue Location)
                 </h2>
@@ -849,11 +920,9 @@
             const width = canvas.width = canvas.offsetWidth;
             const height = canvas.height = canvas.offsetHeight;
 
-            // Fill Canvas with Metallic Gold Layer
             ctx.fillStyle = '#D4AF37';
             ctx.fillRect(0, 0, width, height);
 
-            // Print Label on Gold Layer
             ctx.fillStyle = '#800000';
             ctx.font = 'bold 11px sans-serif';
             ctx.textAlign = 'center';
